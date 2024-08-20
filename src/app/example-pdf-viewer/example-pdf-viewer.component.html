@@ -1,0 +1,6 @@
+<small>Example PDF Viewer</small>
+<ngx-extended-pdf-viewer [src]="'/assets/pdfs/Instrumento-de avaliação -CMMeMPS-BR.pdf'"
+(annotationLayerRendered)="onEvent('annotationLayerRendered', $event)"
+(annotationEditorLayerRendered)="onEvent('annotationEditorLayerRendered', $event)"
+(annotationEditorEvent)="onAnnotationEditorEvent($event)">
+</ngx-extended-pdf-viewer>
