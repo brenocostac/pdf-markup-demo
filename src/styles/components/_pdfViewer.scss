@@ -1,0 +1,28 @@
+#toolbarViewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: black;  
+  border-radius: 8px 8px 0px 0px;  
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+}
+
+#download svg {
+  display: none; 
+   
+}
+
+#download {
+  width: 20px !important; 
+  height: 20px !important; 
+  background-image: url('../../assets/svgs/magnifying-glass-svgrepo-com.svg'); 
+  background-size: cover;  
+  background-repeat: no-repeat;  
+  background-position: center;  
+  
+}
+
+.toolbarButton{
+  color: white !important;
+}
