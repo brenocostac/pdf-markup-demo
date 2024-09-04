@@ -1,4 +1,9 @@
+<button (click)="testeAnottattions()">Mostrar anotações</button>
+<button (click)="loadAnnotationsFromLocalStorage()" >Carregar anotações</button>
+<ngx-extended-pdf-viewer [src]="'/assets/pdfs/Instrumento-de avaliação -CMMeMPS-BR.pdf'"
+(annotationLayerRendered)="onEvent('annotationLayerRendered', $event)"
+(annotationEditorLayerRendered)="onEvent('annotationEditorLayerRendered', $event)"
+(annotationEditorEvent)="onAnnotationEditorEvent($event)">
+</ngx-extended-pdf-viewer>
 
-<ngx-extended-pdf-viewer [customToolbar]="" [customFindbarButtons]="" [src]="'/assets/pdfs/Instrumento-de avaliação -CMMeMPS-BR.pdf'"/> 
 
- 

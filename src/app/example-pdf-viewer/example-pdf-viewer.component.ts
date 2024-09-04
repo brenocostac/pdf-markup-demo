@@ -13,10 +13,7 @@ import { AnnotationEditorEvent } from 'ngx-extended-pdf-viewer/lib/events/annota
 })
 export class ExamplePdfViewerComponent {
 
-  /** In most cases, you don't need the NgxExtendedPdfViewerService. It allows you
-   *  to use the "find" api, to extract text and images from a PDF file,
-   *  to print programmatically, and to show or hide layers by a method call.
-  */
+  annotations:AnnotationEditorEvent[]= [];
   constructor(private pdfService: NgxExtendedPdfViewerService) {
     
   }
@@ -26,8 +23,31 @@ export class ExamplePdfViewerComponent {
     console.log(event);
   }
 
-  onAnnotationEditorEvent(event: AnnotationEditorEvent): void {
-    console.log('Evento de anotações adicionadas disparado:');
-    console.log(event);
+  
+
+  testeAnottattions(): void {
+    console.log('Anotações:');
+    console.log(this.annotations);
   }
+
+  onAnnotationEditorEvent(event: AnnotationEditorEvent): void {
+    console.log('Evento de anotações disparado:', event);
+    this.annotations.push(event);
+    this.saveAnnotationsToLocalStorage();  // Salva as anotações no localStorage após cada mudança
+  }
+
+  saveAnnotationsToLocalStorage(): void {
+    localStorage.setItem('pdfAnnotations', JSON.stringify(this.annotations));
+  }
+
+  loadAnnotationsFromLocalStorage(): void {
+    const savedAnnotations = localStorage.getItem('pdfAnnotations');
+    if (savedAnnotations) {
+      this.annotations = JSON.parse(savedAnnotations);
+    }
+  }
+
+   
+
+  
 }
