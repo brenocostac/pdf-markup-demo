@@ -1,7 +1,6 @@
-<button (click)="testeAnottattions()">Mostrar anotações</button>
-<button (click)="loadAnnotationsFromLocalStorage()" >Carregar anotações</button>
 <ngx-extended-pdf-viewer  #pdfViewer
 [customToolbar]="additionalButtons"
+src="../.././assets/pdfs/Bootstrap-vs-Material-Design-vs-Prime-vs-Tailwind.pdf"
 
 [textLayer]="true"
 (annotationLayerRendered)="onEvent('annotationLayerRendered', $event)"
