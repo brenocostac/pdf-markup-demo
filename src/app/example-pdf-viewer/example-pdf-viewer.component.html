@@ -1,9 +1,35 @@
 <button (click)="testeAnottattions()">Mostrar anotações</button>
 <button (click)="loadAnnotationsFromLocalStorage()" >Carregar anotações</button>
-<ngx-extended-pdf-viewer [src]="'/assets/pdfs/Instrumento-de avaliação -CMMeMPS-BR.pdf'"
+<ngx-extended-pdf-viewer  #pdfViewer
+[customToolbar]="additionalButtons"
+
+[textLayer]="true"
 (annotationLayerRendered)="onEvent('annotationLayerRendered', $event)"
 (annotationEditorLayerRendered)="onEvent('annotationEditorLayerRendered', $event)"
-(annotationEditorEvent)="onAnnotationEditorEvent($event)">
+(annotationEditorEvent)="onAnnotationEditorEvent($event)"
+>
+
 </ngx-extended-pdf-viewer>
 
+<ng-template #additionalButtons>
+  <div id="toolbarViewer"  >
+    <div id="toolbarViewerLeft">
+      <pdf-toggle-sidebar></pdf-toggle-sidebar>
+      <div class="toolbarButtonSpacer"></div>
+      <pdf-find-button [showFindButton]="true" [textLayer]="true"></pdf-find-button>
+       
+    </div>
+    <pdf-zoom-toolbar ></pdf-zoom-toolbar> 
+    <div id="toolbarViewerRight" >
+      <pdf-open-file ></pdf-open-file>
+      <pdf-presentation-mode></pdf-presentation-mode>
+      <pdf-print></pdf-print>
+      <pdf-text-editor></pdf-text-editor>
+      <pdf-download style="color: white;"></pdf-download>
+      <pdf-draw-editor></pdf-draw-editor>
+      <div class="verticalToolbarSeparator hiddenSmallView"></div>
+      <pdf-toggle-secondary-toolbar></pdf-toggle-secondary-toolbar>
+    </div>
+  </div>
+</ng-template>
 

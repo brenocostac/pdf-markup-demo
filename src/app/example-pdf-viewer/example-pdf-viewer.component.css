@@ -1,1 +1,11 @@
- 
+
+::ng-deep ngx-extended-pdf-viewer .toolbarButton {
+  color: white !important;
+}
+
+#toolbarViewer {
+  padding: 5px;
+  background-color: #9CA3AF;  
+  border-radius: 8px 8px 0px 0px;  
+}
+
