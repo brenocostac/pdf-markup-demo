@@ -1,11 +1,11 @@
+<button (click)="saveAnnotations()"> Salvar anotação</button>
+<button (click)="loadAnnotations()">Carregar anotação</button>
 <ngx-extended-pdf-viewer  #pdfViewer
 [customToolbar]="additionalButtons"
-src="../.././assets/pdfs/Bootstrap-vs-Material-Design-vs-Prime-vs-Tailwind.pdf"
 
+src="../../assets/pdfs/Instrumento-de avaliação -CMMeMPS-BR.pdf"
 [textLayer]="true"
-(annotationLayerRendered)="onEvent('annotationLayerRendered', $event)"
-(annotationEditorLayerRendered)="onEvent('annotationEditorLayerRendered', $event)"
-(annotationEditorEvent)="onAnnotationEditorEvent($event)"
+
 >
 
 </ngx-extended-pdf-viewer>
@@ -24,6 +24,7 @@ src="../.././assets/pdfs/Bootstrap-vs-Material-Design-vs-Prime-vs-Tailwind.pdf"
       <pdf-presentation-mode></pdf-presentation-mode>
       <pdf-print></pdf-print>
       <pdf-text-editor></pdf-text-editor>
+      <pdf-highlight-editor></pdf-highlight-editor>
       <pdf-download style="color: white;"></pdf-download>
       <pdf-draw-editor></pdf-draw-editor>
       <div class="verticalToolbarSeparator hiddenSmallView"></div>
